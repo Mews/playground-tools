@@ -32,7 +32,7 @@ if __name__ == "__main__":
     print(f"Downloaded file ({len(download_bytes)} bytes)")
     print(f"Saving file to downloads/{file_name}...")
 
-    if not os.path.exists(download_path):
+    if not os.path.exists(download_path) and os.path.dirname(download_path):
         os.makedirs(os.path.dirname(download_path), exist_ok=True)
 
     with open(download_path, "wb") as f:
